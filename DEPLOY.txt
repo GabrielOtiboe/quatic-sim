@@ -1,0 +1,197 @@
+═══════════════════════════════════════════════════════════════════
+  QUATIC SIMULATOR — DEPLOY TO THE WEB IN 15 MINUTES
+═══════════════════════════════════════════════════════════════════
+
+GOAL: Get a public URL like https://quatic-sim.streamlit.app
+      that anyone (your supervisor) can open in their browser.
+
+WHAT YOU NEED:
+  ✓ GitHub account (you have one: GabrielOtiboe)
+  ✓ The quatic-sim folder (downloaded from this conversation)
+  ✓ A web browser
+  ✓ ~15 minutes
+
+
+───────────────────────────────────────────────────────────────────
+  PART 1 — UPLOAD CODE TO GITHUB  (10 minutes)
+───────────────────────────────────────────────────────────────────
+
+STEP 1: Sign in to GitHub
+  Open https://github.com in your browser.
+  If not signed in, click "Sign in" (top-right) and use your credentials.
+
+STEP 2: Create a new repository
+  - Click the "+" icon (top-right of GitHub page)
+  - Click "New repository"
+  - Repository name:  quatic-sim
+    (use exactly this name, lowercase, with the hyphen)
+  - Description (optional): QUATIC Cyber-Resilience Simulator
+  - Choose: Public  (this is required for free Streamlit deployment)
+  - DO NOT tick "Add a README file"
+  - DO NOT tick "Add .gitignore"
+  - DO NOT add a license
+  - Click the green "Create repository" button
+
+STEP 3: Upload the code
+  GitHub will now show a page with several options. Look for the link
+  that says "uploading an existing file" (it's in the middle of the page,
+  inside a quick-setup section).
+  
+  Click on "uploading an existing file"
+
+STEP 4: Drag and drop your files
+  - On your Mac, open the quatic-sim folder
+  - Select ALL the files and folders inside (Cmd+A)
+  - Drag them all into the GitHub upload area in your browser
+  - Wait for them to finish uploading (you'll see green checkmarks)
+
+  IMPORTANT: drag the CONTENTS of the folder, not the folder itself.
+  You should see files like: app.py, README.md, requirements.txt
+  and folders like: agents/, core/, engine/ — all at the top level.
+
+STEP 5: Commit the upload
+  - Scroll down on the GitHub page
+  - In the "Commit changes" section, the default message is fine
+  - Click the green "Commit changes" button
+  - Wait ~30 seconds while GitHub saves everything
+
+STEP 6: Verify
+  - You should now see your code on the repository page
+  - The URL is: https://github.com/GabrielOtiboe/quatic-sim
+  - You should see app.py, README.md, and the folders listed
+  - Click on README.md to see your project description rendered nicely
+
+  ✅ DONE WITH PART 1
+
+
+───────────────────────────────────────────────────────────────────
+  PART 2 — DEPLOY TO STREAMLIT CLOUD  (5 minutes)
+───────────────────────────────────────────────────────────────────
+
+STEP 7: Open Streamlit Community Cloud
+  Open https://share.streamlit.io in your browser.
+
+STEP 8: Sign in with GitHub
+  - Click "Continue with GitHub"
+  - GitHub will ask you to authorize Streamlit
+  - Click "Authorize Streamlit"
+  - You may need to confirm with your GitHub password
+
+STEP 9: Create a new app
+  - You'll land on the Streamlit dashboard
+  - Click "Create app" (top-right) or the big "Deploy a public app from GitHub" button
+  - Choose: "Deploy a public app from GitHub"
+
+STEP 10: Fill in the deployment form
+  Three fields. Fill them in like this:
+
+    Repository:  GabrielOtiboe/quatic-sim
+    Branch:      main
+    Main file path:  app.py
+
+  Optional — pick a custom subdomain:
+    App URL:   quatic-sim  →  becomes https://quatic-sim.streamlit.app
+    
+    If that name is taken, try: quatic-sim-owusu  or  gabriel-quatic
+
+STEP 11: Click "Deploy"
+  - Streamlit will spend 2–3 minutes installing Python, dependencies,
+    and starting your app. You'll see logs scrolling.
+  - When it's ready, your app will load automatically in the browser.
+  - The URL at the top is your PUBLIC LINK — copy it.
+
+STEP 12: Test it
+  - Click "▶️ RUN SIMULATION" in the sidebar
+  - Wait a few seconds — you should see results appear
+  - Try "⚖️ COMPARE ALL DEFENDERS" too
+
+  ✅ DONE — YOU'RE LIVE
+
+
+───────────────────────────────────────────────────────────────────
+  PART 3 — SHARE WITH YOUR SUPERVISOR  (instant)
+───────────────────────────────────────────────────────────────────
+
+Send your supervisor an email like this:
+
+----------------------------------------------------------------
+Subject: QUATIC Simulator — Live demo for review
+
+Dear [Supervisor's name],
+
+The simulation system for my QUATIC thesis is now live. You can
+test it directly in your browser — no installation required:
+
+   🔗  https://quatic-sim.streamlit.app
+
+Quick start (30 seconds):
+  1. Open the link above
+  2. Click "▶️ RUN SIMULATION" (default is QUATIC, recommended)
+  3. Then change defender to "📋 Baseline" and run again — compare
+
+For side-by-side validation of Table 5.4 (Maersk counterfactual),
+click "⚖️ COMPARE ALL DEFENDERS" — this runs the same NotPetya
+attack against all three defences simultaneously.
+
+The source code repository:
+   📦  https://github.com/GabrielOtiboe/quatic-sim
+
+The simulator validates the central claims of Chapter 5 by running
+an empirical NotPetya-class attack against (a) a NIST/ISO baseline
+defender, (b) the full QUATIC framework, and (c) a hybrid phased
+deployment. Six scenarios are included, mapping to Tables 5.4, 5.5,
+and Section 2.6.
+
+Happy to walk you through the architecture or any specific finding.
+
+Best regards,
+Gabby
+----------------------------------------------------------------
+
+
+───────────────────────────────────────────────────────────────────
+  IF SOMETHING GOES WRONG
+───────────────────────────────────────────────────────────────────
+
+PROBLEM: "Repository name already exists"
+  → Use a different name like quatic-simulator or quatic-thesis
+
+PROBLEM: Upload to GitHub takes forever / freezes
+  → Try uploading in two batches: first the .py files, then the folders
+
+PROBLEM: Streamlit says "App failed to start"
+  → Click "Manage app" (bottom-right of the deploy page)
+  → Look at the logs to see the error
+  → Common cause: missing requirements.txt — make sure it was uploaded
+  → Copy the error and send it to Claude, we'll fix it
+
+PROBLEM: "Authorize Streamlit" doesn't work
+  → Log out of GitHub, log back in, try again
+  → Make sure pop-ups aren't blocked in your browser
+
+PROBLEM: The app is slow to load the first time
+  → Normal. Streamlit's free tier "sleeps" inactive apps. First load
+    after a long pause takes ~30 seconds. Subsequent loads are instant.
+
+
+───────────────────────────────────────────────────────────────────
+  WHAT YOU'VE JUST DEPLOYED
+───────────────────────────────────────────────────────────────────
+
+A production-grade, browser-based interactive simulator that:
+
+  ✓ Reproduces the Maersk 2017 NotPetya catastrophe
+  ✓ Tests QUATIC against the same attack — empirically validates Table 5.4
+  ✓ Runs phase-by-phase ablation matching Table 5.5
+  ✓ Lets your supervisor click, drag, and explore in real time
+  ✓ Shows the attack unfolding live on a network grid
+  ✓ Has plain-English findings auto-generated after each run
+  ✓ Runs side-by-side comparison of all three defenders
+  ✓ Loads in any browser — no Python, no installation, no terminal
+
+Your supervisor can click the link from their phone, laptop, or
+office computer and immediately see your thesis claims demonstrated
+empirically. This is what production-grade research deliverables
+look like.
+
+Good luck with the submission. You earned this.
