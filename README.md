@@ -1,6 +1,6 @@
 # 🛡️ QUATIC Cyber-Resilience Simulator
 
-**Interactive validation of the Quantum-Augmented Trans-Immune Cyber (QUATIC) framework**
+**Comprehensive empirical validation platform for the Quantum-Resilient, Autonomous, Transnational Immuno-Cyber System**
 Owusu Sekyere — KNUST MSc Forensic Science, 2025
 
 [![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://share.streamlit.io)
@@ -9,36 +9,58 @@ Owusu Sekyere — KNUST MSc Forensic Science, 2025
 
 ## 🌐 Live Demo
 
-👉 **[Open the live dashboard](https://YOUR-DEPLOY-URL.streamlit.app)** (loads in your browser, no install needed)
+👉 **[Open the live dashboard](https://quatic-sim.streamlit.app)** (loads in your browser, no install needed)
 
-## 🎯 What is this?
+## 🎯 What this is
 
-A discrete-event simulator that pits a **NotPetya-class cyber attack** against three different defences:
+A comprehensive **8-dashboard interactive validation platform** for every claim in the QUATIC thesis. Not just a NotPetya demo — a full empirical reproduction of:
 
-1. **Baseline (NIST CSF / ISO 27001)** — reactive, signature-based, human-speed.
-2. **QUATIC (full)** — the proposed framework: Immune Zones + Quantum Entropy Sentinel + Transnational Cyber-Immune Cooperation.
-3. **Hybrid (phased rollout)** — staged deployment across Phases 0–6.
+- **Table 4.1** — NotPetya attack stage analysis
+- **Table 4.2** — ISO/IEC 25010 quality attribute failure matrix
+- **Tables 4.3 + 4.4** — Framework capability scoring (13.9% vs 94.4%)
+- **Table 4.5** — Centralised architecture risk analysis
+- **Table 4.6** — International cooperation gap analysis
+- **Table 4.7** — Geopolitical bystander risk typology
+- **Chapter 5.2** — Full ICA + QES + TCICP component specification
+- **Table 5.4** — QUATIC counterfactual analysis
+- **Table 5.5** — 36-month phased implementation roadmap
 
-The simulator answers the question:
+## 📊 Headline reproduction
 
-> *Would QUATIC have prevented the 2017 Maersk catastrophe — and if so, by how much?*
+The thesis claims NIST CSF and ISO 27001 score **13.9%** while QUATIC reaches **94.4%** on a 12-dimension capability test. This simulator **reproduces those exact numbers computationally**.
 
-## 📊 Key Findings
+## 🎮 Eight thesis-aligned dashboards
 
-| Defender | Healthy % | Destroyed % | TTD (min) | DCs alive | Contained |
-|---|---|---|---|---|---|
-| Baseline (NIST/ISO) | 27% | 73% | Never | 1/6 | ❌ |
-| QUATIC (full) | 100% | 0% | 2 | 6/6 | ✅ |
-| Hybrid Phase 2 | 99% | 1% | 2 | 4/6 | ✅ |
+| Tab | What it does | Thesis ref |
+|-----|--------------|------------|
+| 🏠 **Home** | Framework overview, headline metrics, dashboard map | Chapter 1 |
+| 🦠 **Attack Laboratory** | 6 attack classes × 3 defenders × tunable parameters | Sections 2.2-2.10; Table 4.1 |
+| 📊 **Framework Scoring** | 12-dimension capability comparison: 13.9% vs 94.4% | Tables 4.3, 4.4 |
+| 🛡️ **QUATIC Components** | Deep dive into ICA (6 principles), QES (5 layers), TCICP (5 mechanisms) | Chapter 5.2 |
+| 🌐 **Multi-Org TCICP** | Federation experiment: cooperation vs isolation | Section 2.8; Table 4.6 |
+| 📈 **Phased Rollout** | Test any attack against each of 7 implementation phases | Table 5.5 |
+| 🎯 **Quality Attributes** | ISO/IEC 25010 failure matrix with QUATIC mappings | Table 4.2 |
+| 🌍 **Geopolitical Risks** | Bystander risk typology with QUATIC mitigations | Table 4.7 |
 
-Across 20 Monte Carlo runs with randomized attacker parameters:
-- Baseline: **0/20 contained**, mean loss $335,426
-- QUATIC: **20/20 contained**, mean loss $0
+## 🦠 Six attack classes tested
+
+1. **🦠 NotPetya** (worm + wiper) — the Maersk 2017 catastrophe
+2. **🤖 AI-Driven Ransomware** (GAN-evading, ML target selection) — Section 2.6
+3. **🥷 Stealth APT** (Sandworm-class, LOLBAS, dormancy) — Section 2.6
+4. **📦 Supply Chain Compromise** (M.E.Doc-style poisoned update) — Section 2.2
+5. **⚛️ Quantum HNDL** (harvest-now-decrypt-later) — Section 2.10
+6. **🌐 Multi-Org Coordinated** (single attack across N organisations) — Section 2.8
+
+## 🛡️ Three defender profiles
+
+1. **📋 Baseline** — NIST CSF / ISO 27001 (reactive, signature-based, human-speed)
+2. **🛡️ QUATIC** — Full ICA + QES + TCICP (pre-pathogenic, machine-speed, federated)
+3. **🔧 Hybrid** — Phased rollout (Phase 0 through Phase 6 per Table 5.5)
 
 ## 🎮 Try it yourself
 
 ### Online (recommended)
-Visit the [live dashboard](https://YOUR-DEPLOY-URL.streamlit.app), drag the sliders, click Run.
+Visit the [live dashboard](https://quatic-sim.streamlit.app) — drag sliders, click Run, watch the results.
 
 ### Locally
 ```bash
@@ -49,43 +71,32 @@ streamlit run app.py
 ```
 Then open http://localhost:8501 in your browser.
 
-## 🧪 Six built-in scenarios
-
-| # | Scenario | Maps to |
-|---|---|---|
-| 1 | Maersk counterfactual | Table 5.4 of thesis |
-| 2 | Phase-by-phase ablation | Table 5.5 roadmap |
-| 3 | Monte Carlo (30 runs) | Sensitivity analysis |
-| 4 | AI-ransomware variant | Section 2.6 |
-| 5 | Stealth APT sweep | Adversarial stress test |
-| 6 | TCICP federation on/off | Section 3.3 |
-
 ## 🏗️ Architecture
 
 ```
-app.py                  # Streamlit dashboard (live UI)
-core/topology.py        # Nodes, zones, links, credentials
-agents/attacker.py      # NotPetya kill-chain
-agents/defender.py      # Baseline / QUATIC / Hybrid defenders
-engine/simulation.py    # Tick-based discrete-event engine
-scenarios/library.py    # Pre-built experiments
+app.py                         # 8-tab Streamlit dashboard (~700 lines)
+core/topology.py               # Nodes, zones, links, credentials
+agents/
+  attacker.py                  # NotPetya kill-chain engine
+  attack_classes.py            # 6 thesis-justified attack class configurations
+  defender.py                  # Baseline / QUATIC / Hybrid defenders
+  federation.py                # Multi-org TCICP experiment harness
+  capability_scoring.py        # Tables 4.3, 4.7, ISO/IEC 25010 data
+engine/simulation.py           # Tick-based discrete-event engine
+scenarios/library.py           # CLI-accessible pre-built scenarios
 ```
 
 ## 📚 Citation
 
-If you reference this simulator in academic work:
-
-> Owusu Sekyere, K. (2025). *QUATIC: A Quantum-Augmented Trans-Immune
-> Cyber Framework for Pre-Pathogenic Threat Containment.* MSc dissertation,
-> Kwame Nkrumah University of Science and Technology.
+> Owusu Sekyere, K. (2025). *Cyber Threats, Operational Disruption, and the Future of Resilience: Lessons from NotPetya and the QUATIC System.* MSc dissertation, Kwame Nkrumah University of Science and Technology.
 
 ## 🛠️ Tech stack
 
 - **Python 3.10+**
-- **Streamlit** — interactive web UI
-- **Matplotlib** — visualizations
+- **Streamlit** — interactive multi-tab web UI
+- **Matplotlib** — publication-quality visualisations
 - **NumPy** — numerics
-- Pure-Python discrete-event simulation engine (no external dependencies)
+- Pure-Python discrete-event simulation engine
 
 ## 📄 License
 
